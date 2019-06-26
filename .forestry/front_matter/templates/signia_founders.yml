@@ -1,0 +1,7 @@
+---
+label: signia_founders
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
