@@ -7,7 +7,7 @@ sections:
 - type: jekyll-pages
   label: m.cdn.audibene.de
   create: all
-  new_doc_ext: ".html"
+  new_doc_ext: html
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
