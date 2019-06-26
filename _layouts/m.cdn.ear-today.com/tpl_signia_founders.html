@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="hearing aid advice - The future of modern hearing systems">
+		<meta name="format-detection" content="telephone=no">
+		<title>{{page.title}}</title>
+
+		<link href="css/style.css" rel="stylesheet">
+
+		<!--FAVICON -->
+		<link rel="shortcut icon" href="favicon.ico">
+
+		<!-- PRECONNECTS -->
+		<link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+		<link rel="preconnect" href="https://cdn.polyfill.io" crossorigin>
+
+		<!-- start:landing-head-css -->
+		<link rel="stylesheet" href="https://m.cdn.ear-today.com/global/css/pinegrow-preview.css">
+		<!-- end:landing-head-css -->
+
+		<!-- STYLES AND CUSTOM FONTS! -->
+		<link href="css/style.css" rel="stylesheet" media="screen">
+
+		<!-- start:landing-head-js -->
+		<script src="https://m.cdn.ear-today.com/global/js/pinegrow-preview-head.js"></script>
+		<!-- end:landing-head-js -->
+
+		<!--DYNAMIC TEASER TRIGGER -->
+		<script>
+			window.dynamicImage.init({
+				selector: '.htmlReplacement',
+				base: 'https://res.cloudinary.com/dhqvlsb3l/image/',
+				subfolder: 'signia_founders',
+				format: 'jpg'
+			});
+		</script>
+	</head>
+	<body>
+	<!-- start:landing-body-open-js -->
+	<!-- end:landing-body-open-js -->
+
+	<!-- MAIN CONTENT DESKTOP -->
+	<div class="desktop-container desktop-hidden">
+		<header class="d-header">
+			<div class="d-wrapper height-100">
+				<span class="d-header__ad-label">advertorial</span>
+				<div class="d-header__grid">
+					<div class="d-header__col d-header__col--logo">
+						<img class="fluid-img" src="img/logo.svg" alt="" />
+					</div>
+				</div>
+			</div>
+		</header>
+
+		{{content}}
+
+		<footer class="d-footer">
+			<div class="d-wrapper">
+				<nav class="d-footer__navi list-reset">
+					<li class="d-footer__navi-item">
+						<a class="d-footer__navi-link" href="https://www.ear-today.com/imprint/">Imprint</a>
+					</li>
+					<li class="d-footer__navi-item">
+						<a class="d-footer__navi-link" href="https://www.ear-today.com/privacy-policy/">Privacy
+							Policy</a>
+					</li>
+					<li class="d-footer__navi-item">
+						Tel:
+						<a class="d-footer__navi-link js-dyno-phone" href="tel:17865743799">1-786-574-3799</a>
+					</li>
+				</nav>
+			</div>
+		</footer>
+	</div>
+
+	<!-- DYNO DATE -->
+	<script>
+		(function (document) {
+			'use strict';
+			var elements = document.querySelectorAll('.js-dyno-date');
+			var state = {
+				dynoDate: null
+			};
+			var config = {
+				monthsToSubtract: 1,
+				dayofMonth: 27
+			};
+
+			function getMonthAbbr(monthNumber) {
+				var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+				return monthNames[monthNumber];
+			}
+
+			function getDayOfWeek(dayNumber) {
+				var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+				return dayNames[dayNumber];
+			}
+
+			function getPreviousDate(dateConfig) {
+				var todaysDate = new Date();
+				var dayOfWeek, dayOfMonth, abbrMonth, year;
+				if (!dateConfig.monthsToSubtract || !dateConfig.dayofMonth) return;
+				todaysDate.setMonth(todaysDate.getMonth() - dateConfig.monthsToSubtract);
+				todaysDate.setDate(config.dayofMonth);
+				dayOfWeek = getDayOfWeek(todaysDate.getDay());
+				dayOfMonth = todaysDate.getDate();
+				abbrMonth = getMonthAbbr(todaysDate.getMonth());
+				year = todaysDate.getFullYear();
+				return dayOfWeek + ', ' + abbrMonth + ' ' + dayOfMonth + ', ' + year;
+			}
+
+			function render() {
+				if (!state.dynoDate) {
+					return;
+				}
+
+				elements.forEach(function (item) {
+					item.innerHTML = state.dynoDate;
+				});
+			}
+			state.dynoDate = getPreviousDate(config);
+			render();
+		})(document);
+
+	</script>
+
+	<!-- DYNAMIC CURRENT MONTH -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+			var pastDate = new Date();
+			pastDate.setDate(pastDate.getUTCDate());
+			var dt = new Date(pastDate);
+			var writtenMonth = months[dt.getUTCMonth() - 1];
+			document.querySelector('#d_monthChange').innerHTML = writtenMonth;
+			document.querySelector('#m_monthChange').innerHTML = writtenMonth;
+		});
+
+	</script>
+
+	<!-- YAHOO URL PARAM -->
+	<script>
+		(function () {
+			'use strict';
+
+			function getQueryString(paramName) {
+				var href = window.location.href;
+				var regExps = new RegExp('[?&]' + paramName + '=([^&#]*)', 'i');
+				var paramValue = regExps.exec(href);
+				return paramValue ? paramValue[1] : null;
+			}
+			var yahooParam = getQueryString('yahoo');
+			var bodyEle = document.querySelector('body');
+			if (yahooParam === '1') {
+				bodyEle.classList.add('is-yahoo');
+			}
+		}());
+
+	</script>
+
+	<!-- PUSH CONSENT PROVIDED TO LEAD DATA -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			try {
+				var fc = document.querySelector('.ClientInjector');
+				var pushKey = fc.getAttribute('data-id') + '-' + (fc.getAttribute('data-offer-type') ? fc.getAttribute('data-offer-type') : '');
+			} catch (e) {
+				fc = document.querySelector('.FormClientInjector');
+				pushKey = fc.getAttribute('data-id') + '-' + (fc.getAttribute('data-offer-type') ? fc.getAttribute('data-offer-type') : '');
+			}
+			window.sessionLayer.leadHandler.push(pushKey, {
+				Express_written_consent__c: 'consent provided'
+			});
+		});
+
+	</script>
+
+	<!-- SMOOTH SCROLLING SCRIPT -->
+	<script src="https://m.cdn.ear-today.com/global/js/smooth-scroll.min.js"></script>
+	<script>
+		function getElementOffset(el) {
+			var rect = el.getBoundingClientRect(),
+				scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+				scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+			return {
+				top: rect.top + scrollTop,
+				left: rect.left + scrollLeft
+			};
+		}
+		document.addEventListener('DOMContentLoaded', function () {
+			var scrollUpBtns = document.querySelectorAll('.js-scroll-up-btn');
+			if (scrollUpBtns.length > 0) {
+				for (var i = 0; i < scrollUpBtns.length; i++) {
+					scrollUpBtns[i].addEventListener('click', function () {
+						window.scrollTo({
+							top: getElementOffset(document.querySelector('.js-questionnaire')).top,
+							behavior: 'smooth'
+						});
+					});
+				}
+			}
+		});
+
+	</script>
+
+	<!-- GEO LOCATION -->
+	<script>
+		// TODO: refactor to leverage querySelectorAll & a for loop
+		document.addEventListener('DOMContentLoaded', function () {
+			window.sessionLayer.contentReplacer.replace().then(function (data) {
+				if (data && data.location && data.location.country && data.location.region) {
+					document.querySelector('.js-dyno-location-city-mobile').innerHTML = data.location.city;
+					document.querySelector('.js-dyno-location-region-mobile').innerHTML = data.location.region;
+					document.querySelector('.js-dyno-location-city-desk').innerHTML = data.location.city;
+					document.querySelector('.js-dyno-location-region-desk').innerHTML = data.location.region;
+				} else {
+					document.querySelector('.js-dyno-location-mobile').style.display = 'none';
+					document.querySelector('.js-dyno-location-desk').style.display = 'none';
+				}
+			});
+		});
+
+	</script>
+
+	<!-- start:landing-body-close-js -->
+	<script src="https://m.cdn.ear-today.com/global/js/pinegrow-preview-body.js"></script>
+	<!-- end:landing-body-close-js -->
+	</body>
+</html>
